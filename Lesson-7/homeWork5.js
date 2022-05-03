@@ -16,14 +16,14 @@ console.log(myCat.feed());
 function Cat(name) {
     this.name = name;
     this.feed = function () {
-        console.log('Насыпаем в миску ' + this.formatFoodAmount() + ' корма');
+        console.log('Насыпаем в миску ' + this.dailyNorm() + 'гр корма');
     };
     var foodAmount = 0;
     this.dailyNorm = function (amount) {
         if (amount < 50 || amount > 100) {
             throw new Error('Не пойму, вы хотите перекормить кота, или оставить голодным?')
-        } else if (amount == null) {
-            throw new Error('Может все-таки покормим?')
+        } else if (!arguments.length) {
+            return foodAmount;
         } else {
             return foodAmount = amount;
         }
@@ -31,4 +31,5 @@ function Cat(name) {
 }
 
 var myCat = new Cat('Steve');
-console.log(myCat.dailyNorm(60));
+myCat.dailyNorm(76);
+myCat.feed();
