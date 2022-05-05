@@ -1,27 +1,12 @@
 function Cat(name) {
     this.name = name;
     this.feed = function () {
-        console.log('Насыпаем в миску ' + formatFoodAmount() + ' корма');
+        return 'Насыпаем в миску ' + formatFoodAmount() + ' корма';
     };
     var foodAmount = 50;
-    function formatFoodAmount () {
-        return foodAmount + 'гр';
-    };
-}
-
-var myCat = new Cat('Steve');
-console.log(myCat.feed());
-
-
-function Cat(name) {
-    this.name = name;
-    this.feed = function () {
-        console.log('Насыпаем в миску ' + formatFoodAmount() + ' корма');
-    };
-    var foodAmount = 56;git
     function formatFoodAmount() {
         return foodAmount + 'гр';
-    };
+    }
     this.dailyNorm = function (amount) {
         if (!arguments.length) {
             return formatFoodAmount()
@@ -34,6 +19,6 @@ function Cat(name) {
 }
 
 var myCat = new Cat('Steve');
-myCat.dailyNorm(59)
+myCat.dailyNorm(75)
 console.log(myCat.dailyNorm());
 console.log(myCat.feed());
