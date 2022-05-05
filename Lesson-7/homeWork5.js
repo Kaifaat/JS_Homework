@@ -2,13 +2,19 @@
 function Cat(name) {
     this.name = name;
     this.feed = function () {
-        console.log('Насыпаем в миску ' + formatFoodAmount() + ' корма');
+        return 'Насыпаем в миску ' + formatFoodAmount() + ' корма';
     }
-    var myCat = new Cat('Steve');
-    console.log(myCat.feed());
+    var foodAmount = 50;
+
+    function formatFoodAmount() {
+        return foodAmount + 'гр';
+    }
+}
+var myCat = new Cat('Steve');
+console.log(myCat.feed());
 
     //3
-    function Cat(name) {
+    /*function Cat(name) {
         this.name = name;
         this.feed = function () {
             return 'Насыпаем в миску ' + formatFoodAmount() + ' корма';
@@ -33,4 +39,4 @@ function Cat(name) {
     var myCat = new Cat('Steve');
     myCat.dailyNorm(75)
     console.log(myCat.dailyNorm());
-    console.log(myCat.feed());
+    console.log(myCat.feed());*/
