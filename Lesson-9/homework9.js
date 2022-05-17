@@ -1,17 +1,17 @@
 //func style
 function Animal() {
     var self = this;
-    this.feed = function () {
+    self.feed = function () {
         return 'Насыпаем в миску ' + self.formatFoodAmount() + ' корма';
 
     }
-    this.foodAmount = 50;
+    self.foodAmount = 50;
 
-    this.formatFoodAmount = function () {
+    self.formatFoodAmount = function () {
         return self.foodAmount + 'гр';
     }
 
-    this.dailyNorm = function (amount) {
+    self.dailyNorm = function (amount) {
         if (!arguments.length) {
             return self.formatFoodAmount()
         } else if (amount < 50 || amount > 100) {
@@ -38,7 +38,7 @@ function Cat() {
 }
 
 var myCat = new Cat();
-myCat.dailyNorm(75);
+myCat.dailyNorm(95);
 myCat.feed();
 myCat.stroke().feed().stroke().feed()
 
@@ -82,6 +82,6 @@ Cat.prototype.stroke = function () {
 
 var myCat = new Cat();
 
-myCat.dailyNorm(75);
+myCat.dailyNorm(91);
 myCat.feed();
 myCat.stroke().stroke().stroke().feed().feed()
