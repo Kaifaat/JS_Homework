@@ -44,24 +44,24 @@ myCat.stroke().feed().stroke().feed()
 
 //proto style
 function Animal() {
-    this.foodAmount = 50;
+    this._foodAmount = 50;
 }
 
 Animal.prototype.feed = function () {
-    return 'Насыпаем в миску ' + this.formatFoodAmount() + ' корма';
+    return 'Насыпаем в миску ' + this._formatFoodAmount() + ' корма';
 }
 
-Animal.prototype.formatFoodAmount = function () {
-    return this.foodAmount + 'гр';
+Animal.prototype._formatFoodAmount = function () {
+    return this._foodAmount + 'гр';
 }
 
 Animal.prototype.dailyNorm = function (amount) {
     if (!arguments.length) {
-        return this.formatFoodAmount()
+        return this._formatFoodAmount()
     } else if (amount < 50 || amount > 100) {
         throw new Error('Не пойму, вы хотите перекормить кота, или оставить голодным?')
     } else {
-        this.foodAmount = amount;
+        this._foodAmount = amount;
     }
 }
 Cat.prototype = Object.create(Animal.prototype);
