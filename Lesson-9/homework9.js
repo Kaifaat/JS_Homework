@@ -62,7 +62,7 @@ Animal.prototype.dailyNorm = function (amount) {
         throw new Error('Не пойму, вы хотите перекормить кота, или оставить голодным?')
     } else {
         this._foodAmount = amount;
-    }
+    }git 
 }
 Cat.prototype = Object.create(Animal.prototype);
 Cat.prototype.constructor = Cat;
