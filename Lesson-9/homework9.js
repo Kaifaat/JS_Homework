@@ -1,5 +1,6 @@
 //func style
-function Animal() {
+/*function Animal(name) {
+    var name = name;
     var self = this;
     self.feed = function () {
         return 'Насыпаем в миску ' + self.formatFoodAmount() + ' корма';
@@ -22,8 +23,8 @@ function Animal() {
     }
 }
 
-function Cat() {
-    Animal.call(this);
+function Cat(name) {
+    Animal.apply(this, arguments);
     var animalFeed = this.feed;
     this.feed = function () {
         console.log(animalFeed() + '\n' + 'Кот доволен ^_^')
@@ -31,20 +32,21 @@ function Cat() {
 
     }
     this.stroke = function () {
-        console.log('Гладим кота.')
+        console.log('Гладим кота ' + name + 'а')
         return this;
     }
 
 }
 
-var myCat = new Cat();
+var myCat = new Cat('Стив');
 myCat.dailyNorm(95);
 myCat.feed();
-myCat.stroke().feed().stroke().feed()
+myCat.stroke().feed().stroke().feed()*/
 
 //proto style
-function Animal() {
+function Animal(name) {
     this._foodAmount = 50;
+    this._name = name;
 }
 
 Animal.prototype.feed = function () {
@@ -64,11 +66,13 @@ Animal.prototype.dailyNorm = function (amount) {
         this._foodAmount = amount;
     }
 }
+
+function Cat(name) {
+    Animal.apply(this, arguments);
+}
+
 Cat.prototype = Object.create(Animal.prototype);
 Cat.prototype.constructor = Cat;
-
-function Cat() {
-}
 
 Cat.prototype.feed = function () {
     console.log(Animal.prototype.feed.apply(this) + '\n' + 'Кот доволен ^_^');
@@ -76,11 +80,11 @@ Cat.prototype.feed = function () {
 
 }
 Cat.prototype.stroke = function () {
-    console.log('Гладим кота.')
+    console.log('Гладим кота ' + this._name + 'а')
     return this;
 }
 
-var myCat = new Cat();
+var myCat = new Cat('Стив');
 
 myCat.dailyNorm(91);
 myCat.feed();
