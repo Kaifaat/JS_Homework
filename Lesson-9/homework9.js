@@ -1,6 +1,6 @@
 //func style
 function Animal(name) {
-    var name = name;
+    this.name = name;
     var self = this;
     self.feed = function () {
         return 'Насыпаем в миску ' + self.formatFoodAmount() + ' корма';
