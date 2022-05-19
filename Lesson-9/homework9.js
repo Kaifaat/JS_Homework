@@ -1,5 +1,5 @@
 //func style
-/*function Animal(name) {
+function Animal(name) {
     var name = name;
     var self = this;
     self.feed = function () {
@@ -41,7 +41,7 @@ function Cat(name) {
 var myCat = new Cat('Стив');
 myCat.dailyNorm(95);
 myCat.feed();
-myCat.stroke().feed().stroke().feed()*/
+myCat.stroke().feed().stroke().feed()
 
 //proto style
 function Animal(name) {
