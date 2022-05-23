@@ -2,6 +2,9 @@ body {
     margin: 0;
     background-color: #f2f4f8;
     min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 div {
@@ -110,7 +113,7 @@ header {
     padding-left: 0;
     padding-top: 20px;
     background-color: white;
-    min-height: 90vh;
+
 
 }
 
@@ -120,6 +123,7 @@ header {
     background-color: white;
     box-shadow: 0 5px 5px #e0e2e6;
     display: flex;
+    flex: 1 0  auto;
 
 
 }
@@ -307,16 +311,30 @@ h1 span {
 
 menu li a {
     border-radius: 10px;
-    box-shadow: 0 0 40px 40px white inset, 0 0 0 0 white;
     font-family: 'Arial', sans-serif;
     font-weight: bold;
     transition: .15s ease-in-out;
 }
+.left-menu a:hover {
+    color: white;
+}
 
-menu li a:hover {
-    box-shadow: 0 0 10px 0 lightgoldenrodyellow inset, 10px 10px 5px 4px white;
-    color: lightskyblue;}
-
+.left-menu {
+    border: none;
+    background: white;
+    color: olive;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 500ms ease;
+}
+.left-menu:hover {
+    color: olive;
+    box-shadow: inset 0 0 0 3px olive;
+    background: olive;
+}
 
 @media (max-width: 640px) {
     .header {
@@ -572,4 +590,7 @@ menu li a:hover {
 
 .header-mobile i {
     margin-top: 20px;
+}
+html {
+    height: 100%;
 }
