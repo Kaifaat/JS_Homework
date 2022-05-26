@@ -12,21 +12,22 @@ console.log(transformIntoObject(['Leonardo', 'Donatello', 'Raphael']));
 
 //2
 function timeChecking(array) {
-var time;
-array.reduce(
-    (i, current) => time = i + ':' + current
-)
-return 'Текущее время: ' + time
+    var time = array.reduce(function (i, current) {
+        return i + ' : ' + current;
+    }, 'Текущее время')
+    return time;
 }
 
 console.log(timeChecking(['15', '25', '58']));
 
 //3
 function vowelLetterSearcher(str) {
-   var text =  str.toLowerCase().split('').filter(function (i) {
-       return 'аеёюяоиыуэй'.includes(i)
-    }).length;
-       return text;
+    var trueLetters = 'аоеёиуыэюя';
+    var text = str.toLowerCase().split('').reduce(function (sum, i) {
+        (trueLetters.indexOf(i) !== -1) ? sum++ : false;
+        return sum;
+    }, 0);
+    return text;
 }
 
 console.log(vowelLetterSearcher('Я скажу то, что для тебя не новость: мир не такой уж солнечный и приветливый. ' +
