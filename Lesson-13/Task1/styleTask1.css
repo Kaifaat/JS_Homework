@@ -1,0 +1,15 @@
+tr {
+    height: 50px;
+}
+td {
+    width: 200px;
+    text-align: center;
+}
+button {
+    height: 50px;
+    width: 610px;
+}
+#button:hover {
+    cursor: pointer;
+    background-color: lightskyblue;
+}
