@@ -12,22 +12,20 @@ container.appendChild(firstPar);
 container.appendChild(secondPar);
 
 var childOne = function(){
-console.log(firstPar.children);
-firstPar.children[0].classList.add('link');
-firstPar.children[1].classList.add('link');
+    for(i = 0; i < firstPar.children.length; i++){
+        firstPar.children[i].classList.add('link');
+    }
+}
+
+var changeLink = function (event){
+    event.preventDefault();
+    var target = event.target;
+    if(target.tagName === 'A') {
+        alert(target.getAttribute('href'))
+    }
 }
 
 button.onclick = childOne;
+secondPar.addEventListener('click', changeLink);
 
-var secondParLinkOne = secondPar.children[0];
-var secondParLinkTwo = secondPar.children[1];
-
-var changeLink = function (){
-    event.preventDefault();
-
-    alert('https://google.com');
-}
-
-secondParLinkOne.addEventListener('click', changeLink);
-secondParLinkTwo.addEventListener('click', changeLink);
 

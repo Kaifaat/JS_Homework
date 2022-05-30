@@ -36,7 +36,7 @@ table.addEventListener("focusout", function (event) {
 
 function pressEnter(event) {
     if (event.keyCode === 13) {
-        addTd.innerHTML = event.target.value;
+        addTd.textContent = input.value;
     }
 }
 
