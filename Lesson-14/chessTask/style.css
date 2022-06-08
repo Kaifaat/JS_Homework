@@ -1,0 +1,18 @@
+p {
+    font-style: italic;
+    font-weight: bold;
+}
+input {
+    margin-left: 10px;
+}
+button {
+    margin-left: 30px;
+    width: 100px;
+    height: 25px;
+}
+td {
+    border: solid black;
+    width: 30px;
+    height: 30px;
+
+}
