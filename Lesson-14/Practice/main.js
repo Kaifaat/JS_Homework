@@ -21,7 +21,11 @@ var changeLink = function (event) {
     event.preventDefault();
     var target = event.target;
     if (localStorage[target.textContent]) {
+<<<<<<< HEAD
         alert(localStorage.getItem(target.textContent));
+=======
+        alert((JSON.parse(localStorage.getItem(target.innerText))).path);
+>>>>>>> 3ba086f1e75bfa364f05620da0e123e0042dc0dd
     } else {
         localStorage.setItem(target.textContent, JSON.stringify({path: target.getAttribute('href')}));
         alert('Your link was saved');
@@ -29,6 +33,13 @@ var changeLink = function (event) {
     target.setAttribute('href', '#');
 }
 
+<<<<<<< HEAD
+=======
+window.onload = function() {
+    localStorage.clear();
+};
+
+>>>>>>> 3ba086f1e75bfa364f05620da0e123e0042dc0dd
 button.onclick = childOne;
 secondPar.addEventListener('click', changeLink);
 
